@@ -9,3 +9,9 @@
   margin: 2em;
   width: 20em;
 }
+button {
+  background-color: teal;
+}
+button:hover {
+  cursor: pointer;
+}
