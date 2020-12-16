@@ -19,6 +19,23 @@ class Form extends Component {
     })
   }
 
+  handleClick = (event) => {
+    event.preventDefault();
+    const newReservation = {
+      id: new Date().getTime(),
+      name: this.state.name,
+      date: this.state.date,
+      time: this.state.time,
+      number: this.state.number
+    }
+    this.setState({
+      name: '',
+      date: '',
+      time: '',
+      number: ''
+    })
+  }
+
   render() {
     const { name, date, time, number } = this.state
     return (
@@ -27,7 +44,7 @@ class Form extends Component {
         <input type='text' name='date' value={date} placeholder='Date(mm/dd)' onChange={this.handleChange} />
         <input type='text' name='time' value={time} placeholder='Time' onChange={this.handleChange} />
         <input type='text' name='number' value={number} placeholder='Number of guests' onChange={this.handleChange} />
-        <input type="submit" value='Make Reservation' className='submit-button' />
+        <input type="submit" value='Make Reservation' className='submit-button' onClick={this.handleClick} />
       </form>
     )
   }
