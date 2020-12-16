@@ -18,7 +18,7 @@ export const apiCalls = {
 
   addReservation: (newReservation) => {
     return fetch('http://localhost:3001/api/v1/reservations', {
-      method: POST,
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
