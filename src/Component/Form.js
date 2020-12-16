@@ -28,6 +28,7 @@ class Form extends Component {
       time: this.state.time,
       number: this.state.number
     }
+    this.props.getNewReservation(newReservation);
     this.setState({
       name: '',
       date: '',
