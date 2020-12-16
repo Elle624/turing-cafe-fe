@@ -28,6 +28,11 @@ class App extends Component {
       .then(() => this.getReservations())
   }
 
+  removeReservation = (id) => {
+    apiCalls.removeReservation(id)
+      .then(() => this.getReservations())
+  }
+
 
   render() {
     return (
@@ -37,7 +42,7 @@ class App extends Component {
           <Form getNewReservation={this.getNewReservation} />
         </div>
         <div className='resy-container'>
-          <ReservationCard reservations={this.state.reservations} />
+          <ReservationCard reservations={this.state.reservations} removeReservation={this.removeReservation} />
         </div>
       </div>
     )
