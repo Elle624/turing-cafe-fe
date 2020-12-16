@@ -3,12 +3,15 @@ import './App.css';
 import { apiCalls } from '../apiCalls';
 import ReservationCard from '../Component/ReservationCard';
 import Form from '../Component/Form';
+import Menu from '../Component/Menu';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       reservations: [],
+      menu: [],
+      viewMenu: false,
       error: ''
     }
   }
@@ -33,6 +36,16 @@ class App extends Component {
       .then(() => this.getReservations())
   }
 
+  getMenu = () => {
+    apiCalls.getMenu()
+      .then(data => {
+        const list = [...data.drinks, ...data.food]
+        this.setState((prevState) => {
+          return { menu: list, viewMenu: !prevState.viewMenu }
+        })
+      })
+      .catch(err => this.setState({ error: err.message }))
+  }
 
   render() {
     return (
@@ -41,8 +54,10 @@ class App extends Component {
         <div className='resy-form'>
           <Form getNewReservation={this.getNewReservation} />
         </div>
+        <button onClick={this.getMenu}>{this.state.viewMenu ? 'Return' : 'Menu'}</button>
         <div className='resy-container'>
-          <ReservationCard reservations={this.state.reservations} removeReservation={this.removeReservation} />
+          {!this.state.viewMenu && <ReservationCard reservations={this.state.reservations} removeReservation={this.removeReservation} />}
+          {this.state.viewMenu && <Menu menu={this.state.menu} />}
         </div>
       </div>
     )
