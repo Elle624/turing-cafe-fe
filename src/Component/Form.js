@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Form.css'
 
 class Form extends Component {
   constructor() {
@@ -12,13 +13,14 @@ class Form extends Component {
   }
 
   render() {
+    const { name, date, time, number } = this.state
     return (
       <form className='reservation-form'>
-        <input name='name' placeholder='Name' />
-        <input name='date' placeholder='Date(mm/dd)' />
-        <input name='time' placeholder='Time' />
-        <input name='number' placeholder='Number of guests' />
-        <input type="submit" value='Make Reservation' />
+        <input type='text' name='name' value={name} placeholder='Name' />
+        <input type='text' name='date' value={date} placeholder='Date(mm/dd)' />
+        <input type='text' name='time' value={time} placeholder='Time' />
+        <input type='text' name='number' value={number} placeholder='Number of guests' />
+        <input type="submit" value='Make Reservation' className='submit-button' />
       </form>
     )
   }
