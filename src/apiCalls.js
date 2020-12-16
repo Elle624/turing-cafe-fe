@@ -45,5 +45,8 @@ export const apiCalls = {
           throw new Error('Sorry we are having trouble removing reservations for you, please try again')
         }
       })
+  },
+  getMenu: () => {
+    return getData('http://localhost:3001/api/v1/menu')
   }
 }
