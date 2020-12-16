@@ -12,11 +12,13 @@ describe('Form component', () => {
     const date = screen.getByPlaceholderText('Date(mm/dd)');
     const time = screen.getByPlaceholderText('Time');
     const number = screen.getByPlaceholderText('Number of guests');
+    const submitButton = screen.getByRole('button');
 
     expect(name).toBeInTheDocument();
     expect(date).toBeInTheDocument();
     expect(time).toBeInTheDocument();
     expect(number).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
   })
 
 })
