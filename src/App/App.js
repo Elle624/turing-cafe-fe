@@ -24,9 +24,8 @@ class App extends Component {
   }
 
   getNewReservation = (newReservation) => {
-    const updatedReservations = [...this.state.reservations];
-    updatedReservations.push(newReservation);
-    this.setState({ reservations: updatedReservations });
+    apiCalls.addReservation(newReservation)
+      .then(() => this.getReservations())
   }
 
 
