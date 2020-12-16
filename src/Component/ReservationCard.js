@@ -9,10 +9,10 @@ const ReservationCard = ({ reservations }) => {
         <p>{reservation.date}</p>
         <p>{reservation.time}</p>
         <p>{reservation.number}</p>
+        <button>Cancel</button>
       </section>
     )
   })
-
 
   return (
     <section className='cards-container'>
