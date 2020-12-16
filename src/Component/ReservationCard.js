@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReservationCard = (reservations) => {
+const ReservationCard = ({ reservations }) => {
   const reservationsCards = reservations.map(reservation => {
     return (
       <section>
