@@ -9,13 +9,10 @@ const getData = (path) => {
     })
 }
 
-
-
 export const apiCalls = {
   getReservations: () => {
     return getData('http://localhost:3001/api/v1/reservations')
   },
-
   addReservation: (newReservation) => {
     return fetch('http://localhost:3001/api/v1/reservations', {
       method: 'POST',
