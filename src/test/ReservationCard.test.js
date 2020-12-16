@@ -21,8 +21,6 @@ describe('ReservationCard component', () => {
         "number": 2
       },
     ]} />)
-
-    //screen.debug()
     const name1 = screen.getByText('Ben')
     const name2 = screen.getByText('Thao')
     const date1 = screen.getByText('6/7')
