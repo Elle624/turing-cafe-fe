@@ -32,7 +32,7 @@ export const apiCalls = {
   },
   removeReservation: (id) => {
     return fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
