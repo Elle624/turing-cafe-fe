@@ -1,0 +1,13 @@
+.reservation-form input {
+  margin-right: 2em;
+  width: 15em;
+  height: 3em;
+}
+
+.submit-button {
+  background-color: teal;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
