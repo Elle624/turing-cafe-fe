@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/ReservationCard.css'
 
 const ReservationCard = ({ reservations }) => {
   const reservationsCards = reservations.map(reservation => {
     return (
-      <section>
+      <section key={reservation.id} className='card'>
         <p>{reservation.name}</p>
         <p>{reservation.date}</p>
         <p>{reservation.time}</p>
@@ -14,7 +15,7 @@ const ReservationCard = ({ reservations }) => {
 
 
   return (
-    <section>
+    <section className='cards-container'>
       {reservationsCards}
     </section>
   )
